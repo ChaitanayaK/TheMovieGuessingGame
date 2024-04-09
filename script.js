@@ -151,39 +151,47 @@ function handleKeyPress(event) {
 }
 
 function showHint() {
-    var hintBtn = document.getElementById("hint_btn_id");
-    var hintTxt = document.getElementById("hint_txt_id");
-    hintBtn.style.display = "none";
-    hintTxt.style.display = "flex";
-
-    var headingTitle = document.getElementById("bollywood_txt_id");
-    if (headingTitle.innerText == "B O L L Y W O O D") {
-        var hintContent =
-            "<div style='text-align: center; margin-top: 50px'>" +
-            "<b>Release year: </b>" +
-            rowData[2] +
-            "<br><b>Genre(s): </b>" +
-            rowData[4] +
-            "<br><b>Actor(s): </b>" +
-            rowData[6] +
-            "<br><b>Director(s): </b>" +
-            rowData[7] +
-            "</div>";
-    } else if (headingTitle.innerText == "H O L L Y W O O D") {
-        var hintContent =
-            "<div style='text-align: center; margin-top: 50px'>" +
-            "<b>Release year: </b>" +
-            rowData[5] +
-            "<br><b>Genre(s): </b>" +
-            rowData[2] +
-            "<br><b>Actor(s): </b>" +
-            rowData[4] +
-            "<br><b>Director(s): </b>" +
-            rowData[3] +
-            "</div>";
+    if ((guessesLeft - 3) >= 1){
+        guessesLeft -= 3;
+        document.getElementById("guess_chances_id").innerHTML = guessesLeft;
+        
+        var hintBtn = document.getElementById("hint_btn_id");
+        var hintTxt = document.getElementById("hint_txt_id");
+        hintBtn.style.display = "none";
+        hintTxt.style.display = "flex";
+    
+        var headingTitle = document.getElementById("bollywood_txt_id");
+        if (headingTitle.innerText == "B O L L Y W O O D") {
+            var hintContent =
+                "<div style='text-align: center; margin-top: 50px'>" +
+                "<b>Release year: </b>" +
+                rowData[2] +
+                "<br><b>Genre(s): </b>" +
+                rowData[4] +
+                "<br><b>Actor(s): </b>" +
+                rowData[6] +
+                "<br><b>Director(s): </b>" +
+                rowData[7] +
+                "</div>";
+        } else if (headingTitle.innerText == "H O L L Y W O O D") {
+            var hintContent =
+                "<div style='text-align: center; margin-top: 50px'>" +
+                "<b>Release year: </b>" +
+                rowData[5] +
+                "<br><b>Genre(s): </b>" +
+                rowData[2] +
+                "<br><b>Actor(s): </b>" +
+                rowData[4] +
+                "<br><b>Director(s): </b>" +
+                rowData[3] +
+                "</div>";
+        }
+    
+        hintTxt.innerHTML = hintContent;
     }
-
-    hintTxt.innerHTML = hintContent;
+    else{
+        confirm("You do not have enough chances to seek hint!");
+    }
 }
 
 function reloadPage() {
