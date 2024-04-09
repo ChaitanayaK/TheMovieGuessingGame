@@ -125,7 +125,7 @@ function guess() {
             document.getElementById("result_div_id").style.display = "flex";
             document.getElementById("game_div_id").style.display = "none";
             document.getElementById("result_image_id").src =
-                "/Image/win_logo.png";
+                "win_logo.png";
             console.log("you won");
         } else {
             console.log("True");
@@ -139,7 +139,7 @@ function guess() {
     if (!win && guessesLeft <= 0) {
         document.getElementById("result_div_id").style.display = "flex";
         document.getElementById("game_div_id").style.display = "none";
-        document.getElementById("result_image_id").src = "/Image/lost_logo.png";
+        document.getElementById("result_image_id").src = "lost_logo.png";
         // confirm("You Lost the Game!!!");
     }
 }
