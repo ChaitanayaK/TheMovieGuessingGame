@@ -191,6 +191,6 @@ function reloadPage() {
 }
 
 function goBack() {
-    var newPageUrl = "/index.html";
+    var newPageUrl = "https://chaitanayak.github.io/TheMovieGuessingGame.github.io/";
     window.location.href = newPageUrl;
 }
