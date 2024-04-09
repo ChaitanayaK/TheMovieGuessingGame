@@ -58,9 +58,9 @@ function getRandomRow() {
 
     var headingTitle = document.getElementById("bollywood_txt_id");
     if (headingTitle.innerText == "B O L L Y W O O D") {
-        csvFilePath = "/BollywoodMovieDetail.csv";
+        csvFilePath = "BollywoodMovieDetail.csv";
     } else if (headingTitle.innerText == "H O L L Y W O O D") {
-        csvFilePath = "/IMDB-Movie-Data.csv";
+        csvFilePath = "IMDB-Movie-Data.csv";
     }
 
     document.getElementById("game_div_id").style.display = "flex";
