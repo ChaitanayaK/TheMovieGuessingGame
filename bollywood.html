@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Bollywood</title>
+        <link rel="icon" href="/Image/movie_guess_logo_icon.png" type="image/x-icon" />
+        <link rel="stylesheet" href="style_page.css" />
+    </head>
+    <script src="script.js"></script>
+    <body>
+        <div class="container">
+            <h1 id="bollywood_txt_id">B O L L Y W O O D</h1>
+            <button
+                id="startBollywoodBtnId"
+                onclick="getRandomRow()"
+                style="margin-top: 250px"
+            >
+                START
+            </button>
+            <div
+                id="game_div_id"
+                class="game"
+                style="display: none;"
+            >
+                <h2 id="bollywood_game_txt_id" style="margin-top: 30px"></h2>
+                <div style="display: flex; flex-direction: row; margin-top: 20px;">
+                    <h3>Chances Left:&nbsp;&nbsp;</h3>
+                    <h3 id="guess_chances_id">9</h3>
+                </div>
+                <input
+                    type="text"
+                    id="input_id"
+                    autocomplete="off"
+                    onkeydown="handleKeyPress(event)"
+                />
+                <button id="hint_btn_id" style="margin-top: 50px;" onclick="showHint()">Hint-> -3 Guesses</button>
+                <p id="hint_txt_id" style="display: none;"></p>
+                <button id="check_guess_id" style="margin-top: 20px; margin-bottom: 20px;" onclick="guess()">Check</button>
+            </div>
+            <div id="result_div_id" class="game" style="display: none; border: none;">
+                <img id="result_image_id" alt="result image">
+                <div style="margin: 40px; display: flex; flex-direction: row;">
+                    <button onclick="goBack()" class="toandfroButtons">Go Back</button>
+                    <button onclick="reloadPage()" class="toandfroButtons">Next Movie</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
